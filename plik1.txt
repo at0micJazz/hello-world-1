@@ -1,3 +1,19 @@
-COst tam dodajemy - dopisać
+Coś tam dodajemy - dopisać
 Wprowadzić jakies zmiany
-sss
+
+Mikroprocesor MOS 6502 był szeroko wykorzystywany w latach 80. XX wieku do budowy komputerów domowych (np. Apple II). Charakterystyka:
+
+    8-bitowa szyna danych
+    16-bitowa szyna adresowa (przestrzeń adresowa o wielkości 64 KiB = 65536 B)
+    Taktowany zegarem o częstotliwości 1 MHz (odmiany A i B - od 2 do 3 MHz)
+    Najkrótszy cykl rozkazowy: 2 takty zegara, najdłuższy - 7, przeciętny dostęp do pamięci (odczyt lub zapis): 4 takty (3 w przypadku strony zerowej)
+    56 rozkazów, 13 trybów adresowania
+
+Wewnętrznie mikroprocesor zawiera tylko 3 rejestry 8-bitowe dostępne bezpośrednio dla programisty:
+
+    A - Akumulator
+    X, Y - indeksowe rejestry adresowe
+
+Nie jest to jednak zbyt dużą wadą ze względu na istnienie specjalnego trybu adresowania pamięci (tzw. adresowanie strony zerowej) w którym pierwsze 256 bajtów pamięci RAM mogło być wykorzystane prawie jak rejestry wewnętrzne. Reszta pamięci adresowana jest przy użyciu większości z 13 trybów adresowania, zarówno pośrednich (przez adresy na stronie zerowej) jak i absolutnych (w tym indeksowanych).
+
+MOS 6502 w przeciwieństwie do swojego konkurenta Z80 nie ma specjalnych rozkazów do obsługi urządzeń wejścia-wyjścia. Obszar stosu zaimplementowano za pomocą 8-bitowego rejestru stosu (SP), odwołującego się wyłącznie do pierwszej strony pamięci (adresy od 0x100 do 0x1ff). 
